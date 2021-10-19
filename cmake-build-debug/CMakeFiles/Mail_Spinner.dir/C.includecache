@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../includes/general/list.h
+
+../includes/general/queue.h
+
+E:/Learning/C Lang/Mail_Spinner/main.c
+stdio.h
+-
+stdlib.h
+-
+queue.h
+-
+list.h
+-
+time.h
+-
+spin_menu.h
+E:/Learning/C Lang/Mail_Spinner/spin_menu.h
+
+E:/Learning/C Lang/Mail_Spinner/spin_menu.h
+list.h
+-
+queue.h
+-
+
