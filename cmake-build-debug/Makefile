@@ -118,6 +118,54 @@ Mail_Spinner\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\build
 .PHONY : Mail_Spinner\fast
 
+customer.obj: customer.c.obj
+.PHONY : customer.obj
+
+# target to build an object file
+customer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\customer.c.obj
+.PHONY : customer.c.obj
+
+customer.i: customer.c.i
+.PHONY : customer.i
+
+# target to preprocess a source file
+customer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\customer.c.i
+.PHONY : customer.c.i
+
+customer.s: customer.c.s
+.PHONY : customer.s
+
+# target to generate assembly for a file
+customer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\customer.c.s
+.PHONY : customer.c.s
+
+items.obj: items.c.obj
+.PHONY : items.obj
+
+# target to build an object file
+items.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\items.c.obj
+.PHONY : items.c.obj
+
+items.i: items.c.i
+.PHONY : items.i
+
+# target to preprocess a source file
+items.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\items.c.i
+.PHONY : items.c.i
+
+items.s: items.c.s
+.PHONY : items.s
+
+# target to generate assembly for a file
+items.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\items.c.s
+.PHONY : items.c.s
+
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -175,6 +223,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Mail_Spinner
+	@echo ... customer.obj
+	@echo ... customer.i
+	@echo ... customer.s
+	@echo ... items.obj
+	@echo ... items.i
+	@echo ... items.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

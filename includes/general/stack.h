@@ -8,4 +8,4 @@ typedef struct {
 Stack make_stack();
 void push_to_stack(Stack *stake, int new_value);
 void pop_from_stack(Stack *stake);
-int* get_head(Stack *stake);
+int get_head(Stack *stake);
