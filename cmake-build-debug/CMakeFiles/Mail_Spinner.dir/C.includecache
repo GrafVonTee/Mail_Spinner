@@ -10,23 +10,33 @@
 
 ../includes/general/queue.h
 
-E:/Learning/C Lang/Mail_Spinner/main.c
-stdio.h
+../includes/general/stack.h
+
+../includes/in_game/customer.h
+items.h
+../includes/in_game/items.h
+
+../includes/in_game/items.h
+customer.h
+../includes/in_game/customer.h
+stack.h
 -
-stdlib.h
+
+../includes/in_game/spin_menu.h
+list.h
 -
 queue.h
 -
-list.h
--
-time.h
--
+
+E:/Learning/C Lang/Mail_Spinner/spin_menu.c
 spin_menu.h
 E:/Learning/C Lang/Mail_Spinner/spin_menu.h
-
-E:/Learning/C Lang/Mail_Spinner/spin_menu.h
 list.h
 -
 queue.h
+-
+stdio.h
+-
+customer.h
 -
 
