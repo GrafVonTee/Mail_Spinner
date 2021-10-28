@@ -4,10 +4,11 @@
 #include <list.h>
 #include <stack.h>
 #include <time.h>
-#include "spin_menu.h"
-#include "customer.h"
+#include <parse_csv.h>
+#include <spin_menu.h>
+#include "func_definitions.h"
 
-static int max_index = 0;
+extern const int id;
 
 int main() {
     printf("Enter Num of Queues: ");
@@ -17,16 +18,15 @@ int main() {
     srand(time(0));
 
     initialize_packages();
+    parse_customers("..\\customers.csv");
 
+    int temp_id = id - 1;
     for (int q = 0; q < nums_of_queues; q++) {
         qua_sus[q] = make_queue();
         int r = rand() % 3 + 1;
-        for (int p = 0; p < r; p++) {
-            int random_customer_type = rand() % ALL_CUSTOMERS;
-            int cust_id = add_new_customer(random_customer_type);
+        for (int p = 0; (p < r) && (temp_id > -1); p++) {
+            int cust_id = temp_id--;
             push_to_queue(qua_sus + q, cust_id);
-            add_new_item(cust_id);
-            max_index = cust_id;
         }
     }
 

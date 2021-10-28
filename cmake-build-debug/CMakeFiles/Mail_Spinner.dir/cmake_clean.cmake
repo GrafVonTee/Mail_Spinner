@@ -1,8 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Mail_Spinner.dir/customer.c.obj"
-  "CMakeFiles/Mail_Spinner.dir/items.c.obj"
   "CMakeFiles/Mail_Spinner.dir/main.c.obj"
-  "CMakeFiles/Mail_Spinner.dir/spin_menu.c.obj"
+  "CMakeFiles/Mail_Spinner.dir/src/customer.c.obj"
+  "CMakeFiles/Mail_Spinner.dir/src/items.c.obj"
+  "CMakeFiles/Mail_Spinner.dir/src/parse_csv.c.obj"
+  "CMakeFiles/Mail_Spinner.dir/src/spin_menu.c.obj"
   "Mail_Spinner.exe"
   "Mail_Spinner.exe.manifest"
   "Mail_Spinner.lib"
