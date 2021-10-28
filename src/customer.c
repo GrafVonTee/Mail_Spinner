@@ -10,17 +10,21 @@ void print_customer(int id) {
     printf("He can pay %i score!\n", cust.score);
 }
 
-int add_new_customer(CUSTOMERS customer_type) {
-    static int id = -1;
-    Customer new_costumer = customers_array[customer_type];
-    new_costumer.id = ++id;
+int id = 0;
 
-    Customer *temp_ring = (Customer*)calloc(new_costumer.id + 1, sizeof(Customer));
-    for (int i = 0; i < new_costumer.id; i++)
+int add_new_customer_with_type(CUSTOMERS customer_type) {
+    Customer new_customer = customers_array[customer_type];
+    return add_new_customer(new_customer);
+}
+
+int add_new_customer(Customer cust) {
+    cust.id = id++;
+    Customer *temp_ring = (Customer*)calloc(cust.id + 1, sizeof(Customer));
+    for (int i = 0; i < cust.id; i++)
         temp_ring[i] = customers_ring[i];
-    temp_ring[new_costumer.id] = new_costumer;
+    temp_ring[cust.id] = cust;
     free(customers_ring);
     customers_ring = temp_ring;
 
-    return new_costumer.id;
+    return cust.id;
 }

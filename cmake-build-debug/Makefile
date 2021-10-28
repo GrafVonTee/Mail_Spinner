@@ -118,54 +118,6 @@ Mail_Spinner\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\build
 .PHONY : Mail_Spinner\fast
 
-customer.obj: customer.c.obj
-.PHONY : customer.obj
-
-# target to build an object file
-customer.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\customer.c.obj
-.PHONY : customer.c.obj
-
-customer.i: customer.c.i
-.PHONY : customer.i
-
-# target to preprocess a source file
-customer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\customer.c.i
-.PHONY : customer.c.i
-
-customer.s: customer.c.s
-.PHONY : customer.s
-
-# target to generate assembly for a file
-customer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\customer.c.s
-.PHONY : customer.c.s
-
-items.obj: items.c.obj
-.PHONY : items.obj
-
-# target to build an object file
-items.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\items.c.obj
-.PHONY : items.c.obj
-
-items.i: items.c.i
-.PHONY : items.i
-
-# target to preprocess a source file
-items.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\items.c.i
-.PHONY : items.c.i
-
-items.s: items.c.s
-.PHONY : items.s
-
-# target to generate assembly for a file
-items.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\items.c.s
-.PHONY : items.c.s
-
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -190,29 +142,101 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\main.c.s
 .PHONY : main.c.s
 
-spin_menu.obj: spin_menu.c.obj
-.PHONY : spin_menu.obj
+src\customer.obj: src\customer.c.obj
+.PHONY : src\customer.obj
 
 # target to build an object file
-spin_menu.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\spin_menu.c.obj
-.PHONY : spin_menu.c.obj
+src\customer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\customer.c.obj
+.PHONY : src\customer.c.obj
 
-spin_menu.i: spin_menu.c.i
-.PHONY : spin_menu.i
+src\customer.i: src\customer.c.i
+.PHONY : src\customer.i
 
 # target to preprocess a source file
-spin_menu.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\spin_menu.c.i
-.PHONY : spin_menu.c.i
+src\customer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\customer.c.i
+.PHONY : src\customer.c.i
 
-spin_menu.s: spin_menu.c.s
-.PHONY : spin_menu.s
+src\customer.s: src\customer.c.s
+.PHONY : src\customer.s
 
 # target to generate assembly for a file
-spin_menu.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\spin_menu.c.s
-.PHONY : spin_menu.c.s
+src\customer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\customer.c.s
+.PHONY : src\customer.c.s
+
+src\items.obj: src\items.c.obj
+.PHONY : src\items.obj
+
+# target to build an object file
+src\items.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\items.c.obj
+.PHONY : src\items.c.obj
+
+src\items.i: src\items.c.i
+.PHONY : src\items.i
+
+# target to preprocess a source file
+src\items.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\items.c.i
+.PHONY : src\items.c.i
+
+src\items.s: src\items.c.s
+.PHONY : src\items.s
+
+# target to generate assembly for a file
+src\items.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\items.c.s
+.PHONY : src\items.c.s
+
+src\parse_csv.obj: src\parse_csv.c.obj
+.PHONY : src\parse_csv.obj
+
+# target to build an object file
+src\parse_csv.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\parse_csv.c.obj
+.PHONY : src\parse_csv.c.obj
+
+src\parse_csv.i: src\parse_csv.c.i
+.PHONY : src\parse_csv.i
+
+# target to preprocess a source file
+src\parse_csv.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\parse_csv.c.i
+.PHONY : src\parse_csv.c.i
+
+src\parse_csv.s: src\parse_csv.c.s
+.PHONY : src\parse_csv.s
+
+# target to generate assembly for a file
+src\parse_csv.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\parse_csv.c.s
+.PHONY : src\parse_csv.c.s
+
+src\spin_menu.obj: src\spin_menu.c.obj
+.PHONY : src\spin_menu.obj
+
+# target to build an object file
+src\spin_menu.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\spin_menu.c.obj
+.PHONY : src\spin_menu.c.obj
+
+src\spin_menu.i: src\spin_menu.c.i
+.PHONY : src\spin_menu.i
+
+# target to preprocess a source file
+src\spin_menu.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\spin_menu.c.i
+.PHONY : src\spin_menu.c.i
+
+src\spin_menu.s: src\spin_menu.c.s
+.PHONY : src\spin_menu.s
+
+# target to generate assembly for a file
+src\spin_menu.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\spin_menu.c.s
+.PHONY : src\spin_menu.c.s
 
 # Help Target
 help:
@@ -223,18 +247,21 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Mail_Spinner
-	@echo ... customer.obj
-	@echo ... customer.i
-	@echo ... customer.s
-	@echo ... items.obj
-	@echo ... items.i
-	@echo ... items.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... spin_menu.obj
-	@echo ... spin_menu.i
-	@echo ... spin_menu.s
+	@echo ... src/customer.obj
+	@echo ... src/customer.i
+	@echo ... src/customer.s
+	@echo ... src/items.obj
+	@echo ... src/items.i
+	@echo ... src/items.s
+	@echo ... src/parse_csv.obj
+	@echo ... src/parse_csv.i
+	@echo ... src/parse_csv.s
+	@echo ... src/spin_menu.obj
+	@echo ... src/spin_menu.i
+	@echo ... src/spin_menu.s
 .PHONY : help
 
 

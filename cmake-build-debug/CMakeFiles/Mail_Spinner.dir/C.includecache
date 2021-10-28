@@ -16,11 +16,19 @@
 items.h
 ../includes/in_game/items.h
 
+../includes/in_game/func_definitions.h
+items.h
 ../includes/in_game/items.h
 customer.h
 ../includes/in_game/customer.h
+
+../includes/in_game/items.h
 stack.h
 -
+
+../includes/in_game/parse_csv.h
+customer.h
+../includes/in_game/customer.h
 
 ../includes/in_game/spin_menu.h
 list.h
@@ -28,9 +36,65 @@ list.h
 queue.h
 -
 
-E:/Learning/C Lang/Mail_Spinner/spin_menu.c
+E:/Learning/C Lang/Mail_Spinner/main.c
+stdio.h
+-
+stdlib.h
+-
+queue.h
+-
+list.h
+-
+stack.h
+-
+time.h
+-
+parse_csv.h
+-
 spin_menu.h
-E:/Learning/C Lang/Mail_Spinner/spin_menu.h
+-
+func_definitions.h
+E:/Learning/C Lang/Mail_Spinner/func_definitions.h
+
+E:/Learning/C Lang/Mail_Spinner/src/customer.c
+stdlib.h
+-
+customer.h
+E:/Learning/C Lang/Mail_Spinner/src/customer.h
+string.h
+-
+stdio.h
+-
+
+E:/Learning/C Lang/Mail_Spinner/src/items.c
+customer.h
+E:/Learning/C Lang/Mail_Spinner/src/customer.h
+items.h
+E:/Learning/C Lang/Mail_Spinner/src/items.h
+func_definitions.h
+E:/Learning/C Lang/Mail_Spinner/src/func_definitions.h
+stdlib.h
+-
+stdio.h
+-
+
+E:/Learning/C Lang/Mail_Spinner/src/parse_csv.c
+parse_csv.h
+E:/Learning/C Lang/Mail_Spinner/src/parse_csv.h
+customer.h
+E:/Learning/C Lang/Mail_Spinner/src/customer.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+func_definitions.h
+E:/Learning/C Lang/Mail_Spinner/src/func_definitions.h
+
+E:/Learning/C Lang/Mail_Spinner/src/spin_menu.c
+spin_menu.h
+E:/Learning/C Lang/Mail_Spinner/src/spin_menu.h
 list.h
 -
 queue.h

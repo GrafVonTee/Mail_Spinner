@@ -29,25 +29,25 @@ void spin_menu(List *listtok, Queue* queue_array) {
                 printf("\n");
                 break;
             case 'h': // print package from main
-                if (get_head(&pack.main_stack) == -1)
+                if (get_head(pack.main_stack) == -1)
                     printf("Hype \'Main\' is empty\n");
                 else
-                    print_item(get_head(&pack.main_stack));
+                    print_item(get_head(pack.main_stack));
                 printf("\n");
                 break;
             case 'j': // print package from advanced
-                if (get_head(&pack.advanced_stack) == -1)
+                if (get_head(pack.advanced_stack) == -1)
                     printf("Hype \'Advanced\' is empty\n");
                 else
-                    print_item(get_head(&pack.advanced_stack));
+                    print_item(get_head(pack.advanced_stack));
                 printf("\n");
                 break;
             case 'g': // give him a present from main
-                if  ((get_head(&pack.main_stack) != -1)
-                    && (get_head(&pack.main_stack) == get_head_from_queue(queue_array + index_of_list)))
+                if  ((get_head(pack.main_stack) != -1)
+                    && (get_head(pack.main_stack) == get_head_from_queue(queue_array + index_of_list)))
                 {
                     queue_array[index_of_list] = *pop_from_queue(queue_array + index_of_list);
-                    pop_from_stack(&pack.main_stack);
+                    pop_from_stack(pack.main_stack);
                     printf("Successful!\n");
 
                     if (get_head_from_queue(queue_array + index_of_list) == -1) {

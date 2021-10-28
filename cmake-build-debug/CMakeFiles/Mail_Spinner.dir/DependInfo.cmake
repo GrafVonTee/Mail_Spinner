@@ -8,10 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "E:/Learning/C Lang/Mail_Spinner/customer.c" "E:/Learning/C Lang/Mail_Spinner/cmake-build-debug/CMakeFiles/Mail_Spinner.dir/customer.c.obj"
-  "E:/Learning/C Lang/Mail_Spinner/items.c" "E:/Learning/C Lang/Mail_Spinner/cmake-build-debug/CMakeFiles/Mail_Spinner.dir/items.c.obj"
   "E:/Learning/C Lang/Mail_Spinner/main.c" "E:/Learning/C Lang/Mail_Spinner/cmake-build-debug/CMakeFiles/Mail_Spinner.dir/main.c.obj"
-  "E:/Learning/C Lang/Mail_Spinner/spin_menu.c" "E:/Learning/C Lang/Mail_Spinner/cmake-build-debug/CMakeFiles/Mail_Spinner.dir/spin_menu.c.obj"
+  "E:/Learning/C Lang/Mail_Spinner/src/customer.c" "E:/Learning/C Lang/Mail_Spinner/cmake-build-debug/CMakeFiles/Mail_Spinner.dir/src/customer.c.obj"
+  "E:/Learning/C Lang/Mail_Spinner/src/items.c" "E:/Learning/C Lang/Mail_Spinner/cmake-build-debug/CMakeFiles/Mail_Spinner.dir/src/items.c.obj"
+  "E:/Learning/C Lang/Mail_Spinner/src/parse_csv.c" "E:/Learning/C Lang/Mail_Spinner/cmake-build-debug/CMakeFiles/Mail_Spinner.dir/src/parse_csv.c.obj"
+  "E:/Learning/C Lang/Mail_Spinner/src/spin_menu.c" "E:/Learning/C Lang/Mail_Spinner/cmake-build-debug/CMakeFiles/Mail_Spinner.dir/src/spin_menu.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "MSVC")
 

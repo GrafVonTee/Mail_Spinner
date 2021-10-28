@@ -88,25 +88,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="E:/Learning/C Lang/Mail_Spinner/customer.c">
-			<Option target="Mail_Spinner"/>
-		</Unit>
-		<Unit filename="E:/Learning/C Lang/Mail_Spinner/includes/in_game/customer.h">
-			<Option target="Mail_Spinner"/>
-		</Unit>
-		<Unit filename="E:/Learning/C Lang/Mail_Spinner/includes/in_game/items.h">
-			<Option target="Mail_Spinner"/>
-		</Unit>
-		<Unit filename="E:/Learning/C Lang/Mail_Spinner/includes/in_game/spin_menu.h">
-			<Option target="Mail_Spinner"/>
-		</Unit>
-		<Unit filename="E:/Learning/C Lang/Mail_Spinner/items.c">
+		<Unit filename="E:/Learning/C Lang/Mail_Spinner/includes/in_game/func_definitions.h">
 			<Option target="Mail_Spinner"/>
 		</Unit>
 		<Unit filename="E:/Learning/C Lang/Mail_Spinner/main.c">
 			<Option target="Mail_Spinner"/>
 		</Unit>
-		<Unit filename="E:/Learning/C Lang/Mail_Spinner/spin_menu.c">
+		<Unit filename="E:/Learning/C Lang/Mail_Spinner/src/customer.c">
+			<Option target="Mail_Spinner"/>
+		</Unit>
+		<Unit filename="E:/Learning/C Lang/Mail_Spinner/src/items.c">
+			<Option target="Mail_Spinner"/>
+		</Unit>
+		<Unit filename="E:/Learning/C Lang/Mail_Spinner/src/parse_csv.c">
+			<Option target="Mail_Spinner"/>
+		</Unit>
+		<Unit filename="E:/Learning/C Lang/Mail_Spinner/src/spin_menu.c">
 			<Option target="Mail_Spinner"/>
 		</Unit>
 		<Unit filename="E:/Learning/C Lang/Mail_Spinner/CMakeLists.txt">
