@@ -10,7 +10,7 @@
 
 extern const int id;
 
-int main() {
+int main(int argc, char *argv[]) {
     printf("Enter Num of Queues: ");
     int nums_of_queues;
     scanf_s("%d", &nums_of_queues);
@@ -18,7 +18,10 @@ int main() {
     srand(time(0));
 
     initialize_packages();
-    parse_customers("..\\customers.csv");
+    if (argv[1] == NULL)
+        argv[1] = "customers.csv";
+    else
+        parse_customers(argv[1]);
 
     int temp_id = id - 1;
     for (int q = 0; q < nums_of_queues; q++) {
