@@ -18,8 +18,8 @@ int main(int argc, char *argv[]) {
     srand(time(0));
 
     initialize_packages();
-    if (argv[1] == NULL)
-        argv[1] = "customers.csv";
+    if (argc < 2)
+        parse_customers("customers.csv");
     else
         parse_customers(argv[1]);
 
