@@ -88,9 +88,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="E:/Learning/C Lang/Mail_Spinner/includes/in_game/func_definitions.h">
-			<Option target="Mail_Spinner"/>
-		</Unit>
 		<Unit filename="E:/Learning/C Lang/Mail_Spinner/main.c">
 			<Option target="Mail_Spinner"/>
 		</Unit>

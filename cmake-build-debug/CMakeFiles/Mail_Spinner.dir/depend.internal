@@ -6,7 +6,6 @@ CMakeFiles/Mail_Spinner.dir/main.c.obj
  ../includes/general/queue.h
  ../includes/general/stack.h
  ../includes/in_game/customer.h
- ../includes/in_game/func_definitions.h
  ../includes/in_game/items.h
  ../includes/in_game/parse_csv.h
  ../includes/in_game/spin_menu.h
@@ -19,13 +18,11 @@ CMakeFiles/Mail_Spinner.dir/src/customer.c.obj
 CMakeFiles/Mail_Spinner.dir/src/items.c.obj
  ../includes/general/stack.h
  ../includes/in_game/customer.h
- ../includes/in_game/func_definitions.h
  ../includes/in_game/items.h
  E:/Learning/C Lang/Mail_Spinner/src/items.c
 CMakeFiles/Mail_Spinner.dir/src/parse_csv.c.obj
  ../includes/general/stack.h
  ../includes/in_game/customer.h
- ../includes/in_game/func_definitions.h
  ../includes/in_game/items.h
  ../includes/in_game/parse_csv.h
  E:/Learning/C Lang/Mail_Spinner/src/parse_csv.c

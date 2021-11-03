@@ -1,14 +1,13 @@
 #include "customer.h"
 #include "items.h"
-#include "func_definitions.h"
 #include <stdlib.h>
 #include <stdio.h>
 
 void print_item(int id) {
     Item it = items_ring[id];
-    printf("Item %s (%s)\n", it.name, items_array[it.type].name);
-    printf("It is needed for customer %s\n", customers_ring[id].name);
-    printf("He can pay %i score!\n", customers_ring[id].score);
+    wprintf(L"Item %s (%ls)\n", it.name, items_array[it.type].name);
+    wprintf(L"It is needed for customer %ls\n", customers_ring[id].name);
+    wprintf(L"He can pay %i score!\n", customers_ring[id].score);
 }
 
 void move_head_to_advanced() {

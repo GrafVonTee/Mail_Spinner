@@ -5,9 +5,11 @@
 
 void print_customer(int id) {
     Customer cust = customers_ring[id];
-    printf("Customer %s (%s)\n", cust.name, customers_array[cust.type].name);
-    printf("He needs package #%s\n", items_ring[id].name);
-    printf("He can pay %i score!\n", cust.score);
+    wprintf(L"Customer %ls (%ls)\n", cust.name, customers_array[cust.type].name);
+    wprintf(L"He needs package #%ls\n", items_ring[id].name);
+    wprintf(L"He can pay %i score!\n", cust.score);
+    wprintf(L"Hold Effect: %ls\n", cust.holding_description);
+    wprintf(L"Description:\n%ls\n", cust.description);
 }
 
 int id = 0;

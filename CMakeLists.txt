@@ -3,7 +3,7 @@ project(Mail_Spinner C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(Mail_Spinner main.c src/spin_menu.c src/customer.c src/items.c src/parse_csv.c includes/in_game/func_definitions.h)
+add_executable(Mail_Spinner main.c src/spin_menu.c src/customer.c src/items.c src/parse_csv.c)
 
 find_library(LIST_LIBRARY list libs)
 find_library(STACK_LIBRARY stack libs)

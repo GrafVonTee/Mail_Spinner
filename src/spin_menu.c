@@ -9,7 +9,7 @@ void spin_menu(List *listtok, Queue* queue_array) {
     char command = 'o';
     while ((command != 'q') && (listtok != NULL)) {
         int index_of_list = listtok->elem;
-        printf("Current Queue #%i\n", index_of_list + 1);
+        wprintf(L"Current Queue #%i\n", index_of_list + 1);
         fseek(stdin,0,SEEK_END);
         scanf_s("%c", &command);
         switch (command) {
@@ -26,21 +26,21 @@ void spin_menu(List *listtok, Queue* queue_array) {
             */
             case 'c': // print customer
                 print_customer(get_head_from_queue(queue_array + index_of_list));
-                printf("\n");
+                wprintf(L"\n");
                 break;
             case 'h': // print package from main
                 if (get_head(pack.main_stack) == -1)
-                    printf("Hype \'Main\' is empty\n");
+                    wprintf(L"Hype \'Main\' is empty\n");
                 else
                     print_item(get_head(pack.main_stack));
-                printf("\n");
+                wprintf(L"\n");
                 break;
             case 'j': // print package from advanced
                 if (get_head(pack.advanced_stack) == -1)
-                    printf("Hype \'Advanced\' is empty\n");
+                    wprintf(L"Hype \'Advanced\' is empty\n");
                 else
                     print_item(get_head(pack.advanced_stack));
-                printf("\n");
+                wprintf(L"\n");
                 break;
             case 'g': // give him a present from main
                 if  ((get_head(pack.main_stack) != -1)
@@ -48,15 +48,15 @@ void spin_menu(List *listtok, Queue* queue_array) {
                 {
                     queue_array[index_of_list] = *pop_from_queue(queue_array + index_of_list);
                     pop_from_stack(pack.main_stack);
-                    printf("Successful!\n");
+                    wprintf(L"Successful!\n");
 
                     if (get_head_from_queue(queue_array + index_of_list) == -1) {
                         listtok = pop_from_this(listtok);
-                        printf("Queue #%i was cleared!\n", index_of_list + 1);
+                        wprintf(L"Queue #%i was cleared!\n", index_of_list + 1);
                     }
                 }
                 else
-                    printf("Wrong Package!\n");
+                    wprintf(L"Wrong Package!\n");
                 break;
             case 'm': // move head from advanced to main
                 move_head_to_main();
@@ -68,7 +68,7 @@ void spin_menu(List *listtok, Queue* queue_array) {
                 break;
         }
     }
-    printf("\nDas Ende, mein Freind!\n");
+    wprintf(L"\nDas Ende, mein Freind!\n");
 }
 
 void print_all_queues(Queue *queue_array, int nums_of_queues) {

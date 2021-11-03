@@ -12,23 +12,32 @@ typedef enum {
     ALL_CUSTOMERS
 } CUSTOMERS;
 
+typedef enum {
+    STICK_HEAD,
+    SCARING,
+    SHUFFLE,
+    ALL_TYPES_OF_HOLDING
+} HOLDING_TYPES;
+
 typedef struct {
     int id;
-    char *name;
+    wchar_t *name;
     int type;
     int package_type;
     int score;
-    //char *description;
+    int holding_type;
+    wchar_t *holding_description;
+    wchar_t *description;
     Item *package;
 } Customer;
 
 static const Customer customers_array[ALL_CUSTOMERS] = {
-        {-1, "Slime",  SLIME,   SLIME_BALL, 5,      },
-        {-1, "Ghost",  GHOST,   SOUL,       12,     },
-        {-1, "DeD",    DEATH,   LISTTOKS,   20,     },
-        {-1, "Viking", VIKING,  AXE,        25,     },
-        {-1, "Knight", KNIGHT,  SHIELD,     100     },
-        {-1, "Putin",  DEMON,   JOKER,      -500    }, // gay over
+        {-1, L"Slime",  SLIME,   SLIME_BALL, 5,      },
+        {-1, L"Ghost",  GHOST,   SOUL,       12,     },
+        {-1, L"DeD",    DEATH,   LISTTOKS,   20,     },
+        {-1, L"Viking", VIKING,  AXE,        25,     },
+        {-1, L"Knight", KNIGHT,  SHIELD,     100,    },
+        {-1, L"DEMON",  DEMON,   JOKER,      -500,   }, // gay over
 };
 
 Customer *customers_ring;
