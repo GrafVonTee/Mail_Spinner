@@ -1,14 +1,5 @@
 #include <stdlib.h>
 #include "customer.h"
-#include <string.h>
-#include <stdio.h>
-
-void print_customer(int id) {
-    Customer cust = customers_ring[id];
-    printf("Customer %s (%s)\n", cust.name, customers_array[cust.type].name);
-    printf("He needs package #%s\n", items_ring[id].name);
-    printf("He can pay %i score!\n", cust.score);
-}
 
 int id = 0;
 

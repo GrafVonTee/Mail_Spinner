@@ -88,7 +88,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="E:/Learning/C Lang/Mail_Spinner/includes/in_game/func_definitions.h">
+		<Unit filename="E:/Learning/C Lang/Mail_Spinner/includes/in_game/printer.h">
 			<Option target="Mail_Spinner"/>
 		</Unit>
 		<Unit filename="E:/Learning/C Lang/Mail_Spinner/main.c">
@@ -101,6 +101,9 @@
 			<Option target="Mail_Spinner"/>
 		</Unit>
 		<Unit filename="E:/Learning/C Lang/Mail_Spinner/src/parse_csv.c">
+			<Option target="Mail_Spinner"/>
+		</Unit>
+		<Unit filename="E:/Learning/C Lang/Mail_Spinner/src/printer.c">
 			<Option target="Mail_Spinner"/>
 		</Unit>
 		<Unit filename="E:/Learning/C Lang/Mail_Spinner/src/spin_menu.c">

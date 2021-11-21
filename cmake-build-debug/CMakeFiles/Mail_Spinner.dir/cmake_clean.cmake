@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Mail_Spinner.dir/src/customer.c.obj"
   "CMakeFiles/Mail_Spinner.dir/src/items.c.obj"
   "CMakeFiles/Mail_Spinner.dir/src/parse_csv.c.obj"
+  "CMakeFiles/Mail_Spinner.dir/src/printer.c.obj"
   "CMakeFiles/Mail_Spinner.dir/src/spin_menu.c.obj"
   "Mail_Spinner.exe"
   "Mail_Spinner.exe.manifest"

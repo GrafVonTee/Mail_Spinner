@@ -8,10 +8,12 @@ typedef enum {
     PACKAGE_CUSTOMER,
     SCORE,
     HOLD_EFFECT,
-    DESCRIPTION_OF_CUSTOMER
+    HOLD_EFFECT_DESCRIPTION,
+    DESCRIPTION_OF_CUSTOMER,
+    ALL_PARSE
 } COLUMN_TYPE;
 
 void parse_customers(const char *path);
-CUSTOMERS get_customer_type(char *buff);
-Customer get_customer_from_buff(char *buff);
-int get_customer_score(char *token);
+CUSTOMERS get_customer_type(wchar_t *buff);
+Customer get_customer_from_buff(wchar_t *buff);
+int get_customer_score(wchar_t *token);

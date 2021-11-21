@@ -3,6 +3,7 @@
 #include "items.h"
 
 typedef enum {
+    EMPTY_MAN,
     SLIME,
     GHOST,
     DEATH,
@@ -12,29 +13,49 @@ typedef enum {
     ALL_CUSTOMERS
 } CUSTOMERS;
 
+typedef enum {
+    NONE,
+    STICK_HEAD,
+    SCARING,
+    SHUFFLE,
+    ALL_TYPES_OF_HOLDING
+} HOLDING_TYPES;
+
 typedef struct {
     int id;
-    char *name;
+    wchar_t *name;
     int type;
     int package_type;
     int score;
-    //char *description;
+    int holding_type;
+    wchar_t *holding_description;
+    wchar_t *description;
     Item *package;
 } Customer;
 
+static const Customer empty_man = {
+        -1,
+        L"Empty Man",
+        EMPTY_MAN,
+        EMPTY_ITEM,
+        5,
+        NONE,
+        L"",
+        L"Hey, this Queue is empty! You're cool!"
+};
+
 static const Customer customers_array[ALL_CUSTOMERS] = {
-        {-1, "Slime",  SLIME,   SLIME_BALL, 5,      },
-        {-1, "Ghost",  GHOST,   SOUL,       12,     },
-        {-1, "DeD",    DEATH,   LISTTOKS,   20,     },
-        {-1, "Viking", VIKING,  AXE,        25,     },
-        {-1, "Knight", KNIGHT,  SHIELD,     100     },
-        {-1, "Putin",  DEMON,   JOKER,      -500    }, // gay over
+        {-1, L"Hint", EMPTY_MAN, EMPTY_ITEM  },
+        {-1, L"Slime",     SLIME,     SLIME_BALL  },
+        {-1, L"Ghost",     GHOST,     SOUL        },
+        {-1, L"DeD",       DEATH,     LISTTOKS    },
+        {-1, L"Viking",    VIKING,    AXE         },
+        {-1, L"Knight",    KNIGHT,    SHIELD      },
+        {-1, L"DEMON",     DEMON,     JOKER       },
 };
 
 Customer *customers_ring;
 
 // functions
 
-void print_customer(int id);
-int add_new_customer_with_type(CUSTOMERS customer_type);
 int add_new_customer(Customer cust);
