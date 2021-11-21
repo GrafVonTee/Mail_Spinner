@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../includes/general/list.h
+
+../includes/general/queue.h
+
 ../includes/general/stack.h
 
 ../includes/in_game/customer.h
@@ -18,13 +22,29 @@ stack.h
 wchar.h
 -
 
-E:/Learning/C Lang/Mail_Spinner/src/customer.c
-stdlib.h
--
+../includes/in_game/printer.h
 customer.h
-E:/Learning/C Lang/Mail_Spinner/src/customer.h
-string.h
+../includes/in_game/customer.h
+
+../includes/in_game/spin_menu.h
+list.h
+-
+queue.h
+-
+
+E:/Learning/C Lang/Mail_Spinner/src/spin_menu.c
+spin_menu.h
+E:/Learning/C Lang/Mail_Spinner/src/spin_menu.h
+list.h
+-
+queue.h
 -
 stdio.h
 -
+customer.h
+E:/Learning/C Lang/Mail_Spinner/src/customer.h
+printer.h
+E:/Learning/C Lang/Mail_Spinner/src/printer.h
+windows.h
+E:/Learning/C Lang/Mail_Spinner/src/windows.h
 

@@ -9,7 +9,8 @@ typedef enum {
     SCORE,
     HOLD_EFFECT,
     HOLD_EFFECT_DESCRIPTION,
-    DESCRIPTION_OF_CUSTOMER
+    DESCRIPTION_OF_CUSTOMER,
+    ALL_PARSE
 } COLUMN_TYPE;
 
 void parse_customers(const char *path);

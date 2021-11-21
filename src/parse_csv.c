@@ -8,6 +8,7 @@
 #include <fcntl.h>
 
 const wchar_t *type_names[ALL_CUSTOMERS] = {
+        L"NONE",
         L"SLIME",
         L"GHOST",
         L"DEATH",
@@ -23,6 +24,7 @@ void parse_customers(const char *path) {
     int str = 0;
     if (file == NULL)
         printf("You are Gay!\n");
+
     while (!ferror(file) && !feof(file)) {
         wchar_t buffer[buffer_size];
         fgetws(buffer, buffer_size, file);
@@ -30,7 +32,7 @@ void parse_customers(const char *path) {
             int cust_id = add_new_customer(get_customer_from_buff(buffer));
             Item new_item = *customers_ring[cust_id].package;
             new_item.id = cust_id;
-            add_new_item(new_item);
+            add_new_item_to_general(new_item);
         }
         wcscpy(buffer, L"");
     }
@@ -39,7 +41,8 @@ void parse_customers(const char *path) {
 Customer get_customer_from_buff(wchar_t *buff) {
     wchar_t *pt;
     wchar_t *token = wcstok(buff, L",", &pt);
-    Customer new_customer;
+    Customer new_customer =
+            {-1,L"", -1, -1, -1, -1, L"", L""};
     int column = 0;
     while (token != NULL) {
         switch (column) {
@@ -71,11 +74,11 @@ Customer get_customer_from_buff(wchar_t *buff) {
                 wcscpy(new_customer.description, token);
                 break;
             default:
+                printf("ERROR: CUSTOMER UNDEFINED!\n");
                 break;
-                //printf("ERROR: CUSTOMER UNDEFINED!\n");
         }
-        column += 1;
-        token = wcstok(NULL, L",", &pt);
+        ++column;
+        token = wcstok(NULL, L",\n", &pt);
     }
     return new_customer;
 }

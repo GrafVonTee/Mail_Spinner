@@ -214,6 +214,30 @@ src\parse_csv.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\parse_csv.c.s
 .PHONY : src\parse_csv.c.s
 
+src\printer.obj: src\printer.c.obj
+.PHONY : src\printer.obj
+
+# target to build an object file
+src\printer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\printer.c.obj
+.PHONY : src\printer.c.obj
+
+src\printer.i: src\printer.c.i
+.PHONY : src\printer.i
+
+# target to preprocess a source file
+src\printer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\printer.c.i
+.PHONY : src\printer.c.i
+
+src\printer.s: src\printer.c.s
+.PHONY : src\printer.s
+
+# target to generate assembly for a file
+src\printer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mail_Spinner.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Mail_Spinner.dir\src\printer.c.s
+.PHONY : src\printer.c.s
+
 src\spin_menu.obj: src\spin_menu.c.obj
 .PHONY : src\spin_menu.obj
 
@@ -259,6 +283,9 @@ help:
 	@echo ... src/parse_csv.obj
 	@echo ... src/parse_csv.i
 	@echo ... src/parse_csv.s
+	@echo ... src/printer.obj
+	@echo ... src/printer.i
+	@echo ... src/printer.s
 	@echo ... src/spin_menu.obj
 	@echo ... src/spin_menu.i
 	@echo ... src/spin_menu.s

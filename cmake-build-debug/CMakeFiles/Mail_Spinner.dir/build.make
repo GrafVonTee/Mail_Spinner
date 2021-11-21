@@ -150,13 +150,33 @@ CMakeFiles\Mail_Spinner.dir\src\parse_csv.c.s: cmake_force
  /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\Mail_Spinner.dir\src\parse_csv.c.s /c "E:\Learning\C Lang\Mail_Spinner\src\parse_csv.c"
 <<
 
+CMakeFiles\Mail_Spinner.dir\src\printer.c.obj: CMakeFiles\Mail_Spinner.dir\flags.make
+CMakeFiles\Mail_Spinner.dir\src\printer.c.obj: ..\src\printer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Learning\C Lang\Mail_Spinner\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Mail_Spinner.dir/src/printer.c.obj"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\14.29.30037\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\Mail_Spinner.dir\src\printer.c.obj /FdCMakeFiles\Mail_Spinner.dir\ /FS -c "E:\Learning\C Lang\Mail_Spinner\src\printer.c"
+<<
+
+CMakeFiles\Mail_Spinner.dir\src\printer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Mail_Spinner.dir/src/printer.c.i"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\14.29.30037\bin\Hostx86\x86\cl.exe > CMakeFiles\Mail_Spinner.dir\src\printer.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "E:\Learning\C Lang\Mail_Spinner\src\printer.c"
+<<
+
+CMakeFiles\Mail_Spinner.dir\src\printer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Mail_Spinner.dir/src/printer.c.s"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\14.29.30037\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\Mail_Spinner.dir\src\printer.c.s /c "E:\Learning\C Lang\Mail_Spinner\src\printer.c"
+<<
+
 # Object files for target Mail_Spinner
 Mail_Spinner_OBJECTS = \
 "CMakeFiles\Mail_Spinner.dir\main.c.obj" \
 "CMakeFiles\Mail_Spinner.dir\src\spin_menu.c.obj" \
 "CMakeFiles\Mail_Spinner.dir\src\customer.c.obj" \
 "CMakeFiles\Mail_Spinner.dir\src\items.c.obj" \
-"CMakeFiles\Mail_Spinner.dir\src\parse_csv.c.obj"
+"CMakeFiles\Mail_Spinner.dir\src\parse_csv.c.obj" \
+"CMakeFiles\Mail_Spinner.dir\src\printer.c.obj"
 
 # External object files for target Mail_Spinner
 Mail_Spinner_EXTERNAL_OBJECTS =
@@ -166,12 +186,13 @@ Mail_Spinner.exe: CMakeFiles\Mail_Spinner.dir\src\spin_menu.c.obj
 Mail_Spinner.exe: CMakeFiles\Mail_Spinner.dir\src\customer.c.obj
 Mail_Spinner.exe: CMakeFiles\Mail_Spinner.dir\src\items.c.obj
 Mail_Spinner.exe: CMakeFiles\Mail_Spinner.dir\src\parse_csv.c.obj
+Mail_Spinner.exe: CMakeFiles\Mail_Spinner.dir\src\printer.c.obj
 Mail_Spinner.exe: CMakeFiles\Mail_Spinner.dir\build.make
 Mail_Spinner.exe: ..\libs\stack.lib
 Mail_Spinner.exe: ..\libs\list.lib
 Mail_Spinner.exe: ..\libs\queue.lib
 Mail_Spinner.exe: CMakeFiles\Mail_Spinner.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="E:\Learning\C Lang\Mail_Spinner\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable Mail_Spinner.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="E:\Learning\C Lang\Mail_Spinner\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable Mail_Spinner.exe"
 	"E:\Apps\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\Mail_Spinner.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\10.0.19041.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\10.0.19041.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\14.29.30037\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\Mail_Spinner.dir\objects1.rsp @<<
  /out:Mail_Spinner.exe /implib:Mail_Spinner.lib /pdb:"E:\Learning\C Lang\Mail_Spinner\cmake-build-debug\Mail_Spinner.pdb" /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console  ..\libs\stack.lib ..\libs\list.lib ..\libs\queue.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

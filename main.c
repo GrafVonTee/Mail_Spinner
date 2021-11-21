@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include <queue.h>
 #include <list.h>
-//#include <stack.h>
 #include <time.h>
-//#include <windows.h>
+#include <windows.h>
 #include "parse_csv.h"
 #include "spin_menu.h"
-//#include <fcntl.h>
-//#include <io.h>
+#include <fcntl.h>
+#include <io.h>
+#include "printer.h"
 
 extern const int id;
 
@@ -22,7 +22,6 @@ void initialize_queues(Queue *queues, int *nums_of_queues, int max_num_in_queue)
     int temp_id = id - 1;
     for (int q = 0; q < *nums_of_queues; q++) {
         if (temp_id < 0) {
-            *nums_of_queues = q;
             break;
         }
         queues[q] = make_queue();
@@ -30,6 +29,7 @@ void initialize_queues(Queue *queues, int *nums_of_queues, int max_num_in_queue)
         for (int p = 0; (p < r) && (temp_id > -1); p++) {
             int cust_id = temp_id--;
             push_to_queue(queues + q, cust_id);
+            add_item_to_game(cust_id);
         }
     }
 }
@@ -48,12 +48,23 @@ int get_nums_of_queues() {
     return nums_of_queues;
 }
 
-int main(int argc, char *argv[]) {
-    //SetConsoleOutputCP(CP_UTF8);
-    //SetConsoleCP(CP_UTF8);
-    //_setmode(_fileno(stdout), _O_U8TEXT);
-
+void initialize_params() {
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    _setmode(_fileno(stdout), _O_U8TEXT);
     srand(time(0));
+}
+
+List *make_ring_of_death(int nums_of_queues) {
+    List *ring_of_death = make_list(0);
+    for (int i = 1; i < nums_of_queues; i++)
+        push_to_end(ring_of_death, i);
+    loop_the_list(ring_of_death);
+    return ring_of_death;
+}
+
+int main(int argc, char *argv[]) {
+    initialize_params();
 
     int nums_of_queues = get_nums_of_queues();
     Queue *qua_sus = (Queue*)calloc(nums_of_queues, sizeof(Queue));
@@ -62,13 +73,11 @@ int main(int argc, char *argv[]) {
     initialize_packages();
     parse_customers((argc < 2) ? ("customers.csv") : argv[1]);
     initialize_queues(qua_sus, &nums_of_queues, max_num_in_queue);
+    shuffle_packages();
 
-    List *ring_of_death = make_list(0);
-    for (int i = 1; i < nums_of_queues; i++)
-        push_to_end(ring_of_death, i);
-    loop_the_list(ring_of_death);
-
-    spin_menu(ring_of_death, qua_sus);
+    print_hint();
+    quit();
+    spin_menu(make_ring_of_death(nums_of_queues), qua_sus);
 
     quit();
     return 0;
