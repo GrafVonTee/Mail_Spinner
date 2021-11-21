@@ -159,8 +159,11 @@ void print_customer_new(int id, int index) {
         replicus[0] = empty_name;
         replicus[1] = L"";
         replicus[2] = empty_man.description;
+        unsigned int indent_len = (box_inside_length - wcslen(replicus[index])) / 2;
+        for (int i = 0; i < indent_len; ++i)
+            wprintf(L" ");
         wprintf(replicus[index]);
-        for (int i = 0; i < box_inside_length - wcslen(replicus[index]); ++i)
+        for (int i = 0; i < box_inside_length - wcslen(replicus[index]) - indent_len; ++i)
             wprintf(L" ");
     }
     else if (id >= 0) {
