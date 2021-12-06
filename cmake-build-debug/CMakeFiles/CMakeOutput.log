@@ -26,11 +26,11 @@ The C compiler identification is MSVC, found in "E:/Learning/C Lang/Mail_Spinner
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: E:/Learning/C Lang/Mail_Spinner/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_627f2\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_627f2.dir\build.make /nologo -L                  CMakeFiles\cmTC_627f2.dir\build
-Building C object CMakeFiles/cmTC_627f2.dir/CMakeCCompilerABI.c.obj
-	"E:\Apps\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_627f2.dir\CMakeCCompilerABI.c.obj.d --working-dir="E:\Learning\C Lang\Mail_Spinner\cmake-build-debug\CMakeFiles\CMakeTmp" --filter-prefix="" -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\14.29.30037\bin\Hostx86\x86\cl.exe @C:\Users\Maksim\AppData\Local\Temp\nmD33F.tmp
-Linking C executable cmTC_627f2.exe
-	"E:\Apps\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_627f2.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\10.0.19041.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\10.0.19041.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\14.29.30037\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_627f2.dir\objects1.rsp @C:\Users\Maksim\AppData\Local\Temp\nmD6BB.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_855b5\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_855b5.dir\build.make /nologo -L                  CMakeFiles\cmTC_855b5.dir\build
+Building C object CMakeFiles/cmTC_855b5.dir/CMakeCCompilerABI.c.obj
+	"E:\Apps\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_855b5.dir\CMakeCCompilerABI.c.obj.d --working-dir="E:\Learning\C Lang\Mail_Spinner\cmake-build-debug\CMakeFiles\CMakeTmp" --filter-prefix="" -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\14.29.30037\bin\Hostx86\x86\cl.exe @C:\Users\Maksim\AppData\Local\Temp\nm9424.tmp
+Linking C executable cmTC_855b5.exe
+	"E:\Apps\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_855b5.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\10.0.19041.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\10.0.19041.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\14.29.30037\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_855b5.dir\objects1.rsp @C:\Users\Maksim\AppData\Local\Temp\nm9540.tmp
 
 
 

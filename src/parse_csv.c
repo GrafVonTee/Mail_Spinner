@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <fcntl.h>
+#include <wchar.h>
 
 const wchar_t *type_names[ALL_CUSTOMERS] = {
         L"NONE",
@@ -15,6 +16,13 @@ const wchar_t *type_names[ALL_CUSTOMERS] = {
         L"VIKING",
         L"KNIGHT",
         L"DEMON"
+};
+
+const wchar_t *holding_names[ALL_TYPES_OF_HOLDING] = {
+    L" ",
+    L"stick_head",
+    L"scaring",
+    L"shuffle",
 };
 
 #define buffer_size 1000
@@ -35,6 +43,7 @@ void parse_customers(const char *path) {
             add_new_item_to_general(new_item);
         }
         wcscpy(buffer, L"");
+        wprintf(L"");
     }
 }
 
@@ -64,6 +73,7 @@ Customer get_customer_from_buff(wchar_t *buff) {
                 new_customer.score = get_customer_score(token);
                 break;
             case HOLD_EFFECT:
+                new_customer.holding_type = get_customer_holding_type(token);
                 break;
             case HOLD_EFFECT_DESCRIPTION:
                 new_customer.holding_description = (wchar_t*)calloc(wcslen(token) + 1, sizeof(wchar_t));
@@ -88,6 +98,14 @@ CUSTOMERS get_customer_type(wchar_t *token) {
         if (wcscmp(token, type_names[i]) == 0)
             return i;
     wprintf(L"Error: customer type \"%s\" is undefined!\n", token);
+    return -1;
+}
+
+int get_customer_holding_type(wchar_t *token) {
+    for (int i = 0; i < ALL_TYPES_OF_HOLDING; ++i)
+        if (wcscmp(token, holding_names[i]) == 0)
+            return i;
+    wprintf(L"Error: holding type \"%s\" not found!\n", token);
     return -1;
 }
 

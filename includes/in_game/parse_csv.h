@@ -17,3 +17,4 @@ void parse_customers(const char *path);
 CUSTOMERS get_customer_type(wchar_t *buff);
 Customer get_customer_from_buff(wchar_t *buff);
 int get_customer_score(wchar_t *token);
+int get_customer_holding_type(wchar_t *token);

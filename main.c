@@ -12,24 +12,28 @@
 
 extern const int id;
 
-void quit() {
-    char temp;
+void wait_char() {
     fseek(stdin,0,SEEK_END);
-    scanf_s("%c", &temp);
+    getchar();
 }
 
 void initialize_queues(Queue *queues, int *nums_of_queues, int max_num_in_queue) {
-    int temp_id = id - 1;
+    int temp_length = id;
+    int *id_bools = (int*)calloc(temp_length, sizeof(int));
+    for (int i = 0; i < temp_length; ++i)
+        id_bools[i] = customers_ring[i].id;
     for (int q = 0; q < *nums_of_queues; q++) {
-        if (temp_id < 0) {
+        if (temp_length <= 0)
             break;
-        }
         queues[q] = make_queue();
         int r = rand() % max_num_in_queue + 1;
-        for (int p = 0; (p < r) && (temp_id > -1); p++) {
-            int cust_id = temp_id--;
+        for (int p = 0; (p < r) && (temp_length > 0); p++) {
+            int rand_num = rand() % temp_length;
+            int cust_id = id_bools[rand_num];
             push_to_queue(queues + q, cust_id);
             add_item_to_game(cust_id);
+            id_bools = resize_without_current_index(id_bools, temp_length, rand_num);
+            temp_length--;
         }
     }
 }
@@ -76,9 +80,9 @@ int main(int argc, char *argv[]) {
     shuffle_packages();
 
     print_hint();
-    quit();
+    wait_char();
     spin_menu(make_ring_of_death(nums_of_queues), qua_sus);
 
-    quit();
+    wait_char();
     return 0;
 }

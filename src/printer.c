@@ -13,15 +13,22 @@ const int box_inside_length = 50;
 const int box_width = 40;
 const int box_height = 14;
 
-typedef enum {
-    LEFT_ARROW,
-    RIGHT_ARROW,
-    LEFT_BOLD_ARROW,
-    RIGHT_BOLD_ARROW,
-    SPACES,
-    KEYES,
-    ALL_ARROWS
-} Arrows_Types;
+const wchar_t *empty[14] = {
+        L"#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#",
+        L"|                                      |",
+        L"|                                      |",
+        L"|                                      |",
+        L"|                                      |",
+        L"|                                      |",
+        L"|                                      |",
+        L"|                                      |",
+        L"|                                      |",
+        L"|                                      |",
+        L"|                                      |",
+        L"|                                      |",
+        L"|                                      |",
+        L"#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#"
+};
 
 const wchar_t *slime[14] = {
     L"#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#",
@@ -37,6 +44,91 @@ const wchar_t *slime[14] = {
     L"|        ((##                  ))      |",
     L"|        ((______________________)     |",
     L"|                                      |",
+    L"#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#"
+};
+
+const wchar_t *ghost[14] = {
+        L"#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#",
+        L"|......................@@@@@@@@@@,.....|",
+        L"|...................@@@@@@@@@@@@@@.....|",
+        L"|..................@&....,@@%%,..@@%%....|",
+        L"|.................@@%%....@@@,....@@....|",
+        L"|................@@@@@@@@@@&.@@@@@@....|",
+        L"|...............@@@@@@@@@@@@@@@@@@@....|",
+        L"|...............@@@@@@@@@@@@@@@@@@@....|",
+        L"|..............@@@@&@@@@@@&@@@@@&@.....|",
+        L"|..............@@@&&@@@@&&&@@@@@&@.....|",
+        L"|.............(@@@%%&@@@@&%%%%%&@@@@&@.....|",
+        L"|........................&&&....,......|",
+        L"|......................................|",
+        L"#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#"
+};
+
+const wchar_t *viking[14] = {
+        L"#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#",
+        L"|                               /^\\    |",
+        L"|               _________      /''|    |",
+        L"|             /; $$$$$$$ ;\\_../' '|    |",
+        L"|           /; $$$#;;#$$$ ;\\#'   '/    |",
+        L"|          |$    //      $ ;|____/     |",
+        L"|          |($) //  ($$)  $;|          |",
+        L"|          | {@/@ }      ___|          |",
+        L"|  .__.     \\__________ /||  .______.  |",
+        L"| {....}____/ 7  77  77  \\__{. . . . } |",
+        L"|    \\== $$  $$$$$$$$$/ /$$$/ $$  /==  |",
+        L"|     \\== $$  $$$$$$$/ /$$$/   ==/     |",
+        L"|      \\===\\$$ $$$/  /$$$/  /===/      |",
+        L"#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#"
+};
+
+const wchar_t *maya[14] = {
+        L"#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#",
+        L"|@@@@@@@@@@@@@@@@@@///////@@@@@@@@@@@@@|",
+        L"|@@@@@@@@@@@@@@@@,,,,,,*//,@@@@@@@@@@@@|",
+        L"|@@@@@@@@@@@@@@@@,*//,////@@@@@@@@@@@@@|",
+        L"|@@@@@@@@@@@@@@@(//*//////@@@@@@@@@@@@@|",
+        L"|@@@@@@@@@@@@@/,,,,///////@@@@@@@@@@@@@|",
+        L"|@@@@@@@@@@@@@,*//////(/,@@@@@@@@@@@@@@|",
+        L"|@@@@@@@@@@@@@***///////@@@@@@@@@@@@@@@|",
+        L"|@@@@@@@@@@@@@*///////,/@@@@@@@@@@@@@@@|",
+        L"|@@@@@@@@@@@@@@,,,,,,,////@@@@@@@@@@@@@|",
+        L"|@@@@@@@@@@@@@******///////@@@@@@@@@@@@|",
+        L"|@@@@@@@@@@@@*****///////@@@@@@@@@@@@@@|",
+        L"|@@@@@@@@@@@@@@**////@@@@@@@@@@@@@@@@@@|",
+        L"#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#"
+};
+
+const wchar_t *knight[14] = {
+        L"#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#",
+        L"|@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|",
+        L"|@@@@@@@@@@@@@@@@@@(%%%%@@@@@@@@@@@@@@@@@|",
+        L"|@@@@@@@@@@@@@@@(///#%%&%%%%@@@@@@@@@@@@@@|",
+        L"|@@@@@@@@@@@#///////%%&&%%@%%%%%%&@@@@@@@@@@|",
+        L"|@@@@@@@@@@(///*////%%&&%%@%%&%%%%%%@@@@@@&&@|",
+        L"|@@@@@@@@@@(////%%%%%%%%%%&&&&&&&&%%@@@@@@@@@|",
+        L"|@@@@@@@@@@(///%%,,,,*#&,,,,,/&@&@@@@@@@|",
+        L"|@@@@@@@@@@(//////////%%%%@%%%%@%%%%@@@@@@@@@|",
+        L"|@@@@@@@@@@(//*/,/,///%%%%%%%%/*%%%%@@@@@@@@@|",
+        L"|@@@@@@@@@@%%////,/,///%%%%/%%/*%%%%@@@@@@@@@|",
+        L"|@@@@@@@@@(////////*//%%%%%%@&%%%%&%%@@@@@@@@|",
+        L"|@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|",
+        L"#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#"
+};
+
+const wchar_t *putin[14] = {
+    L"#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#",
+    L"|        $//$$$$ $$$                 |",
+    L"|       //$    $$        5 43№%  |",
+    L"|     //$     $$$     45№   №;%       |",
+    L"|            $$$    53         53;%№   |",
+    L"|          __/ $$$      \\___$      |",
+    L"|      ==  @@\\ $$$№     /@@  $         |",
+    L"|     +--)  || $$        $  %№;   |",
+    L"|           %$@^ $$$$         $         |",
+    L"|     ;6?№№    \\\\______/   //   |",
+    L"|       45 %;№  4 $$$        $         |",
+    L"|        ;% &%$ 5$$$$   $$      |",
+    L"|            ::5   $$$$$$       |",
     L"#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#"
 };
 
@@ -74,7 +166,7 @@ const wchar_t *right_bold_arrow[] = {
         L"      |/  "
 };
 
-void print_table(Action_Type action, int cust_id) {
+void print_table(Action_Type action, int cust_id, int score) {
     print_horizontal_line(width);
     for (int h = 0; h < height; ++h) {
         wprintf(L"|");
@@ -88,7 +180,7 @@ void print_table(Action_Type action, int cust_id) {
         else if ((h < 19) && (h > 4))
             print_box(cust_id, h-5);
         else if ((h < 23) && (h > 19))
-            print_hype(h-20);
+            print_hype(h-20, score);
         else
             for (int space = 0; space < box_inside_length; ++space)
                 wprintf(L" ");
@@ -138,7 +230,7 @@ void print_arrow_line(Arrows_Types type, int index) {
 
 void print_horizontal_line(int l_width) {
     wprintf(L"#");
-    for (int i = 0; i < l_width - 2; ++i)
+    for (int i = 0; i < (l_width - 2); ++i)
         wprintf(L"^");
     wprintf(L"#\n");
 }
@@ -163,22 +255,28 @@ void print_customer_new(int id, int index) {
         for (int i = 0; i < indent_len; ++i)
             wprintf(L" ");
         wprintf(replicus[index]);
-        for (int i = 0; i < box_inside_length - wcslen(replicus[index]) - indent_len; ++i)
+        for (int i = 0; i < (box_inside_length - wcslen(replicus[index]) - indent_len); ++i)
             wprintf(L" ");
     }
     else if (id >= 0) {
         Customer cust = customers_ring[id];
+        if (cust.holding_type == SHUFFLE)
+            shuffle_packages();
         wchar_t cust_name[50] = L"";
         wchar_t pack_name[50] = L"";
+        wchar_t scor_name[50] = L"Score: +";
+        wchar_t score_str[20];
         wcscat(cust_name, cust.name);
         wcscat(cust_name, L" (");
         wcscat(cust_name, customers_array[cust.type].name);
         wcscat(cust_name, L")");
         wcscat(pack_name, L"It needs a package: ");
         wcscat(pack_name, cust.package->name);
+        _itow(cust.score, score_str, 10);
+        wcscat(scor_name, score_str);
         replicus[0] = cust_name;
-        replicus[1] = L"";
-        replicus[2] = pack_name; //cust.description;
+        replicus[1] = pack_name;
+        replicus[2] = scor_name;
         unsigned int indent_len = (box_inside_length - wcslen(replicus[index])) / 2;
         for (int i = 0; i < indent_len; ++i)
             wprintf(L" ");
@@ -188,11 +286,13 @@ void print_customer_new(int id, int index) {
     }
 }
 
-void print_hype(int index) {
+void print_hype(int index, int score) {
     wchar_t *replicus[3];
     if (index > -1) {
         wchar_t main_hype[50] = L"Main Hype: ";
         wchar_t advn_hype[50] = L"Advanced: ";
+        wchar_t scor_hype[50] = L"Score: ";
+        wchar_t score_str[20];
         if (get_head(pack.main_stack) == -1)
             wcscat(main_hype, L"\'Empty\'");
         else
@@ -201,9 +301,11 @@ void print_hype(int index) {
             wcscat(advn_hype, L"\'Empty\'");
         else
             wcscat(advn_hype, items_ring[get_head(pack.advanced_stack)].name);
+        _itow(score, score_str, 10);
+        wcscat(scor_hype, score_str);
         replicus[0] = main_hype;
-        replicus[1] = L"";
-        replicus[2] = advn_hype;
+        replicus[1] = advn_hype;
+        replicus[2] = scor_hype;
 
         unsigned int indent_len = (box_inside_length - wcslen(replicus[index])) / 2;
         for (int i = 0; i < indent_len; ++i)
@@ -219,10 +321,32 @@ void print_box(int id, int index) {
         unsigned int indent_len = (box_inside_length - box_width) / 2;
         for (int i = 0; i < indent_len; ++i)
             wprintf(L" ");
+        Customer cust = customers_ring[id];
+        if (id == -1) cust = empty_man;
+        switch (cust.type) {
+            case GHOST:
+                wprintf(ghost[index]);
+                break;
+            case DEATH:
+                wprintf(maya[index]);
+                break;
+            case KNIGHT:
+                wprintf(knight[index]);
+                break;
+            case EMPTY_MAN:
+                wprintf(empty[index]);
+                break;
+            case VIKING:
+                wprintf(viking[index]);
+                break;
+            case DEMON:
+                wprintf(putin[index]);
+                break;
+            default:
+                wprintf(slime[index]);
+        }
 
-        wprintf(slime[index]);
-
-        for (int i = 0; i < box_inside_length - box_width - indent_len; ++i)
+        for (int i = 0; i < (box_inside_length - box_width - indent_len); ++i)
             wprintf(L" ");
     }
 }
@@ -256,8 +380,8 @@ wchar_t **tokenize_string(wchar_t *str, int *string_nums) {
     wchar_t *token = wcstok(str, L" ", &pt);
     int column = 0;
     while (token != NULL) {
-        if (wcslen(sub_str[column]) + wcslen(token) > width - 6) {
-            for (int s = 0; s <= width-6 - wcslen(sub_str[column]); ++s)
+        if ((wcslen(sub_str[column]) + wcslen(token)) > (width - 6)) {
+            for (int s = 0; s <= (width-6 - wcslen(sub_str[column])); ++s)
                 wcscat(sub_str[column], L" ");
             ++column;
         }
@@ -266,7 +390,7 @@ wchar_t **tokenize_string(wchar_t *str, int *string_nums) {
         token = wcstok(NULL, L" \n", &pt);
     }
     int len = wcslen(sub_str[column]);
-    for (int s = 0; s <= width-6 - len - 1; ++s)
+    for (int s = 0; s <= (width-6 - len - 1); ++s)
         wcscat(sub_str[column], L" ");
     *string_nums = column + 1;
     return sub_str;
@@ -291,8 +415,8 @@ void print_customer(int id) {
 */
 
 void print_hint() {
-    const int all_replicus = 8;
     wchar_t *replicus[] = {
+            NULL,
             L"~~~ HINT ~~~",
             L"",
             L"h - print this hint",
@@ -300,16 +424,22 @@ void print_hint() {
             L"a - move left",
             L"d - move right",
             L"w - move package to main hype",
-            L"s - move package to advanced hype"
+            L"s - move package to advanced hype",
+            L"g - give present to customer from main hype",
+            L"q - wait_char from game",
+            NULL
     };
+    int count_null = 0;
     print_horizontal_line(box_inside_length);
-    for (int h = -1; h < all_replicus + 1; ++h) {
+    for (int h = 0; count_null < 2; ++h) {
         wprintf(L"|");
         print_inner();
 
-        if ((h < 0) || (h == all_replicus))
+        if (replicus[h] == NULL) {
+            count_null++;
             for (int s = 0; s < box_inside_length - 6; ++s)
                 wprintf(L" ");
+        }
         else {
             unsigned int indent_len = (box_inside_length - wcslen(replicus[h]) - 6) / 2;
             for (int i = 0; i < indent_len; ++i)
