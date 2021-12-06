@@ -5,22 +5,21 @@
 #include "customer.h"
 #include "printer.h"
 #include "windows.h"
+#include <conio.h>
 
-void quit();
+void wait_char();
 
 void spin_menu(List *listtok, Queue* queue_array) {
     int nums_of_queues = listtok->prev->elem + 1;
     char command = 'o';
     char status = 0;
+    int score = nums_of_queues * 15;
     Action_Type action = HOLDING;
-    while ((command != 'q') && (status != 1)) {
-        int index_of_list = listtok->elem;
+    while ((command != 'q') && (status != 1) && (score >= 0)) {
         system("cls");
-        print_table(action, get_head_from_queue(queue_array + index_of_list));
-        //Sleep(1500);
-        //wprintf(L"Current Queue #%i\n", index_of_list + 1);
-        fseek(stdin,0,SEEK_END);
-        scanf_s("%c", &command);
+        int index_of_list = listtok->elem;
+        print_table(action, get_head_from_queue(queue_array + index_of_list), score);
+        command = _getch();
         action = HOLDING;
         switch (command) {
             case 'd': // right
@@ -32,45 +31,33 @@ void spin_menu(List *listtok, Queue* queue_array) {
                 action = PRESS_LEFT;
                 break;
             case ' ': //print customer description
-                if (get_head_from_queue(queue_array + index_of_list) != -1)
-                    print_message(customers_ring[get_head_from_queue(queue_array + index_of_list)].description);
-                quit();
+                if (get_head_from_queue(queue_array + index_of_list) != -1) {
+                    Customer customer = customers_ring[get_head_from_queue(queue_array + index_of_list)];
+                    print_message(customer.description);
+                    if (customer.holding_type == SCARING) {
+                        int rand_num = rand() % 10;
+                        for (int i = 0; i <= rand_num; ++i)
+                            listtok = listtok->next;
+                    }
+                }
+                score += 2;
+                wait_char();
                 break;
-            /*
-            case 'c': // print customer
-                if (get_head_from_queue(queue_array + index_of_list) == -1)
-                    print_customer((-1) * (index_of_list + 1));
-                else
-                    print_customer(get_head_from_queue(queue_array + index_of_list));
-                break;
-            case 'h': // print package from main
-                if (get_head(pack.main_stack) == -1)
-                    wprintf(L"Hype \'Main\' is empty\n");
-                else
-                    print_item(get_head(pack.main_stack));
-                wprintf(L"\n");
-                break;
-            case 'j': // print package from advanced
-                if (get_head(pack.advanced_stack) == -1)
-                    wprintf(L"Hype \'Advanced\' is empty\n");
-                else
-                    print_item(get_head(pack.advanced_stack));
-                wprintf(L"\n");
-                break;
-            */
             case 'g': // give him a present from main
                 if (get_head_from_queue(queue_array + index_of_list) == -1)
                     print_message(L"Hey, Dude, people do not need your presents at this Queue\n");
                 else if  ((get_head(pack.main_stack) != -1)
                     && (get_head(pack.main_stack) == get_head_from_queue(queue_array + index_of_list)))
                 {
+                    Customer customer = customers_ring[get_head_from_queue(queue_array + index_of_list)];
+                    score += customer.score + 3;
                     queue_array[index_of_list] = *pop_from_queue(queue_array + index_of_list);
                     pop_from_stack(pack.main_stack);
                     print_message(L"Successful!");
                 }
                 else
                     print_message(L"Wrong Package!");
-                quit();
+                wait_char();
                 break;
             case 'w': // move head from advanced to main
                 move_head_to_main();
@@ -80,12 +67,30 @@ void spin_menu(List *listtok, Queue* queue_array) {
                 break;
             case 'h': // print hint
                 print_hint();
-                quit();
+                score += 2;
+                wait_char();
                 break;
             default:
                 break;
         }
         status = get_empty_status_of_list(queue_array, nums_of_queues);
+        score -= 2;
+    }
+    if (score < 0) {
+        print_message(L"Game Over!!!");
+        wait_char();
+        print_message(L"Your score is low than zero!");
+        wait_char();
+    }
+    else if (status == 1) {
+        print_message(L"!!!WINNER!!!");
+        wait_char();
+        wchar_t message[50] = L"Your total score: ";
+        wchar_t scr_str[50];
+        _itow(score, scr_str, 10);
+        wcscat(message, scr_str);
+        print_message(message);
+        wait_char();
     }
     print_message(L"Das Ende, mein Freind!");
 }

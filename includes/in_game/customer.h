@@ -38,14 +38,14 @@ static const Customer empty_man = {
         L"Empty Man",
         EMPTY_MAN,
         EMPTY_ITEM,
-        5,
+        20,
         NONE,
         L"",
         L"Hey, this Queue is empty! You're cool!"
 };
 
 static const Customer customers_array[ALL_CUSTOMERS] = {
-        {-1, L"Hint", EMPTY_MAN, EMPTY_ITEM  },
+        {-1, L"Hint",      EMPTY_MAN, EMPTY_ITEM  },
         {-1, L"Slime",     SLIME,     SLIME_BALL  },
         {-1, L"Ghost",     GHOST,     SOUL        },
         {-1, L"DeD",       DEATH,     LISTTOKS    },
